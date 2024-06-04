@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -y jq
+# sudo apt-get install -y jq
 
 nextReleaseVersion=$1
 
