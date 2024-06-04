@@ -1,0 +1,120 @@
+{
+  "main": {
+    "id": "3d5e726269c8a666",
+    "type": "split",
+    "children": [
+      {
+        "id": "f6fa7c8a0f77b266",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d890a217a3b2e076",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Software.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "52ee9b54bdeae7f1",
+    "type": "split",
+    "children": [
+      {
+        "id": "a55c1440c2c25649",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "81c50496cd3706c3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "88de193c7c0c7d83",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7254019d83485b21",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "26cc763cace8bd5a",
+    "type": "split",
+    "children": [
+      {
+        "id": "5271c1b8e7634667",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66be82721661542e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Software.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
+  "active": "d890a217a3b2e076",
+  "lastOpenFiles": [
+    "Hardware.md",
+    "Goal and project description.md"
+  ]
+}
