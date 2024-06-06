@@ -19,7 +19,7 @@ LEDManager ledManager(33);
 CameraHandler cameraHandler(deviceConfig);
 #endif  // SIM_ENABLED
 
-#ifndef ETVR_EYE_TRACKER_USB_API
+#ifdef WIFI_ENABLED
 WiFiHandler wifiHandler(deviceConfig, WIFI_SSID, WIFI_PASSWORD, WIFI_CHANNEL, ENABLE_ADHOC);
 MDNSHandler mdnsHandler(deviceConfig);
 #ifdef SIM_ENABLED
@@ -85,7 +85,8 @@ void setup() {
 
 serialManager.init();
 
-#ifndef ETVR_EYE_TRACKER_USB_API
+// #ifndef ETVR_EYE_TRACKER_USB_API
+#ifdef WIFI_ENABLED
   etvr_eye_tracker_web_init();
 #else   // ETVR_EYE_TRACKER_WEB_API
   WiFi.disconnect(true);

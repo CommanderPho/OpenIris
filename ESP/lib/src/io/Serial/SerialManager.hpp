@@ -4,13 +4,19 @@
 
 #include <Arduino.h>
 #include <ArduinoJson.h>
+
+#ifdef ETVR_EYE_TRACKER_USB_API
 #include <USBCDC.h>
+const char* const ETVR_HEADER = "\xff\xa0";
+const char* const ETVR_HEADER_FRAME = "\xff\xa1";
+#endif
+
 #include <esp_camera.h>
 #include "data/CommandManager/CommandManager.hpp"
 #include "data/config/project_config.hpp"
 
-const char* const ETVR_HEADER = "\xff\xa0";
-const char* const ETVR_HEADER_FRAME = "\xff\xa1";
+
+
 
 class SerialManager {
  private:

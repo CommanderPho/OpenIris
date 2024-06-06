@@ -10,13 +10,16 @@
 #include <io/Serial/SerialManager.hpp>
 #include <data/CommandManager/CommandManager.hpp>
 
-#ifndef ETVR_EYE_TRACKER_USB_API
+#ifdef WIFI_ENABLED // should this be `ETVR_EYE_TRACKER_WEB_API`?
 #include <network/api/webserverHandler.hpp>
 #include <network/mDNS/MDNSManager.hpp>
 #include <network/stream/streamServer.hpp>
 #include <network/wifihandler/wifihandler.hpp>
-#else
+#endif
+
+#ifdef ETVR_EYE_TRACKER_USB_API
 #include <usb/etvr_eye_tracker_usb.hpp>
 #endif  // ETVR_EYE_TRACKER_WEB_API
+
 
 #endif  // OPENIRIS_HPP
