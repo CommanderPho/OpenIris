@@ -1,7 +1,7 @@
 #include "SerialManager.hpp"
 
 SerialManager::SerialManager(CommandManager* commandManager)
-    : commandManager(commandManager) {}
+    : commandManager(commandManager), lastConnectionTime(0)  {}
 
 #ifdef ETVR_EYE_TRACKER_USB_API
 void SerialManager::send_frame() {
@@ -57,6 +57,17 @@ void SerialManager::init() {
   if (SERIAL_FLUSH_ENABLED){
     Serial.flush();
   }
+}
+
+
+bool SerialManager::isSerialConnected() {
+    if (Serial.available() > 0) {
+        lastConnectionTime = millis();
+        return true;
+    } else if ((millis() - lastConnectionTime) > connectionTimeout) {
+        return false;
+    }
+    return true;
 }
 
 void SerialManager::run() {

@@ -22,6 +22,8 @@ class SerialManager {
  private:
   esp_err_t err = ESP_OK;
   CommandManager* commandManager;
+  unsigned long lastConnectionTime;
+  const unsigned long connectionTimeout = 5000; // 5 seconds timeout
 
 #ifdef ETVR_EYE_TRACKER_USB_API
   int64_t last_frame = 0;
@@ -34,6 +36,7 @@ class SerialManager {
   SerialManager(CommandManager* commandManager);
   void init();
   void run();
+  bool isSerialConnected();
 };
 
 #endif
