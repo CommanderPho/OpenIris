@@ -133,7 +133,40 @@
     },
 
   },
+  "actionButtons": {
+    "commands": [
+    {
+              "cwd": "${workspaceFolder}", /* Terminal initial folder */
+              "name": "Build All Zips",
+              "color": "#009df8",
+              "singleInstance": true,
+              "command": "python repo-tools/scripts/build_all_local.py", /* This is executed in the terminal */
+      "terminalName": "OpenIris Build All .zips",
+      "tooltip": "Build new .zip files for each of the 3 eye configs",
+          },
+      //     {
+      // "cwd": "${workspaceFolder}",
+      // // "cwd": "${workspaceFolder}/EyeTrackApp/",
+      //         "name": "Clean builds",
+      //         "color": "red",
+      //         // "command": "python scripts/clean.py",
+      // "singleInstance": true,
+      //         "command": "poetry run python scripts/clean.py", /* This is executed in the terminal */
+      // "terminalName": "EyeTrackApp Terminal",
+      // "tooltip": "Clean all built files - handle deletion of files/directories",
 
+      //     },
+          // {
+    // 	"cwd": "${workspaceFolder}/EyeTrackApp/",
+          //     "name": "Build pyinstaller",
+          //     "color": "green",
+          //     "command": "python -m pyinstaller eyetrackapp.spec --noconfirm",
+          // },
+    ],
+    "defaultColor": "white",
+    "reloadButton": "↻",
+    "loadNpmCommands": true
+  },
   "extensions": {
     "recommendations": [
       "rangav.vscode-thunder-client"
