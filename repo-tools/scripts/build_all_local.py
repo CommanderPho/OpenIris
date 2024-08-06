@@ -8,7 +8,6 @@ from pathlib import Path
 # targets = ["esp32AIThinker", "esp32M5Stack", "esp32Cam", "esp_eye", "wrover", "wrooms3QIO", "wrooms3QIOUSB", "wrooms3", "wrooms3USB", "xiaosenses3", "xiaosenses3_USB"]
 targets = ["xiaosenses3_phoeyeleft", "xiaosenses3_phoeyeright", "xiaosenses3_phoeyew"]
 
-
 # Set the CI build environment variable
 os.environ["OPENIRIS_CI_BUILD"] = "1"
 
@@ -33,32 +32,32 @@ for target in targets:
     run_command(f"pio run --environment {target}")
     print(f"Build for {target} completed.")
 
-    # Create target directory if it doesn't exist
-    target_dir = os.path.join(build_dir, target)
-    if not os.path.exists(target_dir):
-        os.makedirs(target_dir)
+    # # Create target directory if it doesn't exist
+    # target_dir = os.path.join(build_dir, target)
+    # if not os.path.exists(target_dir):
+    #     os.makedirs(target_dir)
 
-    # Locate the firmware binary
-    firmware_bin = os.path.join(esp_dir, ".pio", "build", target, "firmware.bin")
-    if not os.path.exists(firmware_bin):
-        print(f"No firmware binary found for {target}")
-        continue
+    # # Locate the firmware binary
+    # firmware_bin = os.path.join(esp_dir, ".pio", "build", target, "firmware.bin")
+    # if not os.path.exists(firmware_bin):
+    #     print(f"No firmware binary found for {target}")
+    #     continue
 
-    # Copy firmware binary to target directory
-    firmware_bin_dst = os.path.join(target_dir, "firmware.bin")
-    copyfile(firmware_bin, firmware_bin_dst)
-    print(f"Copied firmware binary to {firmware_bin_dst}")
+    # # Copy firmware binary to target directory
+    # firmware_bin_dst = os.path.join(target_dir, "firmware.bin")
+    # copyfile(firmware_bin, firmware_bin_dst)
+    # print(f"Copied firmware binary to {firmware_bin_dst}")
 
-    # Copy firmware_name.txt to the target directory
-    firmware_name_src = os.path.join(esp_dir, "tools", "firmware_name.txt")
-    firmware_name_dst = os.path.join(target_dir, "firmware_name.txt")
-    copyfile(firmware_name_src, firmware_name_dst)
-    print(f"Copied firmware_name.txt to {firmware_name_dst}")
+    # # Copy firmware_name.txt to the target directory
+    # firmware_name_src = os.path.join(esp_dir, "tools", "firmware_name.txt")
+    # firmware_name_dst = os.path.join(target_dir, "firmware_name.txt")
+    # copyfile(firmware_name_src, firmware_name_dst)
+    # print(f"Copied firmware_name.txt to {firmware_name_dst}")
 
-    # Create a zip archive of the target directory
-    zip_name = os.path.join(build_dir, f"{target}.zip")
-    make_archive(zip_name.replace('.zip', ''), 'zip', target_dir)
-    print(f"Created zip archive {zip_name}.zip")
+    # # Create a zip archive of the target directory
+    # zip_name = os.path.join(build_dir, f"{target}.zip")
+    # make_archive(zip_name.replace('.zip', ''), 'zip', target_dir)
+    # print(f"Created zip archive {zip_name}.zip")
     
 
     # # Create zip file for the build
